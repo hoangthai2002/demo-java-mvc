@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import com.Demo_java_mvc.domain.User;
 import com.Demo_java_mvc.repository.UserRepository;
 
+import jakarta.persistence.Id;
+
 @Service
 
 public class UserService {
@@ -27,7 +29,17 @@ public class UserService {
     }
 
     public List<User> getAllUserByEmail(String email) {
-        return this.userRepository.findByEmail(email);
+        return this.userRepository.findOneByEmail(email);
+    }
+
+    public User getUserById(long id) {
+        return this.userRepository.findById(id);
+
+    }
+
+    public void DeleteUser(long id) {
+        this.userRepository.deleteById(id);
+
     }
 
 }

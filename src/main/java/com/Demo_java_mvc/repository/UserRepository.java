@@ -11,6 +11,11 @@ import com.Demo_java_mvc.domain.User;
 public interface UserRepository extends JpaRepository<User, Long> {
     User save(User valueUser);
 
-    List<User> findByEmail(String email);
+    void deleteById(long id);
 
+    List<User> findOneByEmail(String email);
+
+    List<User> findAll();
+
+    User findById(long id);
 }
