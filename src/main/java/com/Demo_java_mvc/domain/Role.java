@@ -18,7 +18,7 @@ public class Role {
     private String name;
     private String description;
 
-    // role one => many user
+    // role one => many user -> quan hệ 1-N
 
     @OneToMany(mappedBy = "role")
 

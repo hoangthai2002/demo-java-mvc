@@ -1,11 +1,14 @@
 package com.Demo_java_mvc.domain;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,10 +18,16 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private double totalPrice;
-    // Order-many->to one-user
+
+    // Order-many->to one-user -->quan he N-1
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id") // user_id
     private User user;
+
+    // Quan hệ 1-N
+    // order-one -> to many orderdetail
+    @OneToMany(mappedBy = "order")
+    private List<OrderDetail> orderDetail;
 
     public long getId() {
         return id;

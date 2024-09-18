@@ -24,11 +24,12 @@ public class User {
     private String phone;
     private String avatar;
 
-    // User many-> to one ->role
+    // User many-> to one ->role --> quan hệ N-1
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
-    // User- to one -> many-oder
+
+    // User- to one -> many-oder -->quan hệ 1-N
     @OneToMany(mappedBy = "user")
     private List<Order> order;
 

@@ -1,4 +1,4 @@
-package com.Demo_java_mvc.controller;
+package com.Demo_java_mvc.controller.admin;
 
 import java.util.List;
 
@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.Demo_java_mvc.domain.User;
 import com.Demo_java_mvc.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserController {
@@ -40,9 +38,8 @@ public class UserController {
     @RequestMapping("/admin/user")
     public String getUserPage(Model model) {
         List<User> users = this.userService.getAllUser();
-
         model.addAttribute("user1", users);
-        return "admin/user/table-user";
+        return "admin/user/show";
     }
 
     @RequestMapping("/admin/user/{id}")
@@ -50,7 +47,7 @@ public class UserController {
         User user = this.userService.getUserById(id);
         model.addAttribute("user", user);
         model.addAttribute("id", id);
-        return "admin/user/show";
+        return "admin/user/detail";
     }
 
     @RequestMapping("/admin/user/create") // GET
