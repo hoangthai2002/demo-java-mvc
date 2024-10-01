@@ -27,6 +27,7 @@
                                 <h1 class="mt-4"> User Detail</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item "><a href="/admin"> Dashboard</a></li>
+                                    <li class="breadcrumb-item "><a href="/admin/user"> User</a></li>
                                     <li class="breadcrumb-item active">User Detail </li>
                                 </ol>
 
@@ -48,9 +49,10 @@
                                                         <li class="list-group-item">Email: ${user.email}</li>
                                                         <li class="list-group-item">FullName: ${user.fullName}</li>
                                                         <li class="list-group-item">Address: ${user.address}</li>
+                                                        <li class="list-group-item">Role: ${user.role.name}</li>
                                                     </ul>
                                                 </div>
-                                                <a href="/admin/user" class="btn btn-primary">Back</a>
+                                                <a href="/admin/user" class="btn btn-success">Back</a>
                                             </div>
 
                                         </div>

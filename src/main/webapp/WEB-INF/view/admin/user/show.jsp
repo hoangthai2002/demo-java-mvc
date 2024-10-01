@@ -50,6 +50,8 @@
                                                         <th>Full Name</th>
                                                         <th>Phone</th>
                                                         <th>Address</th>
+                                                        <th>Role</th>
+
 
 
                                                     </tr>
@@ -62,6 +64,8 @@
                                                             <td>${user.fullName}</td>
                                                             <td>${user.phone}</td>
                                                             <td>${user.address}</td>
+                                                            <td>${user.role.name}</td>
+
 
                                                             <td>
                                                                 <a href="/admin/user/${user.id}"

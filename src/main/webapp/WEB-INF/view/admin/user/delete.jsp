@@ -27,6 +27,7 @@
                                 <h1 class="mt-4">Delete User</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item "><a href="/admin"> Dashboard</a></li>
+                                    <li class="breadcrumb-item "><a href="/admin/user"> User</a></li>
                                     <li class="breadcrumb-item active">Delete User</li>
                                 </ol>
 
@@ -37,7 +38,7 @@
                                                 <h3>Delete the user ${id}</h3>
                                                 <hr />
                                                 <div class="alert alert-danger" role="alert">
-                                                    Bạn có muốn xóa!
+                                                    Bạn có muốn xóa User ${id}
                                                 </div>
                                                 <form:form modelAttribute="newUser" method="post"
                                                     action="/admin/user/delete">
@@ -47,6 +48,7 @@
                                                             path="id" />
                                                     </div>
                                                     <button class="btn btn-danger">Delete</button>
+                                                    <a href="/admin/user" class="btn btn-success">Back</a>
                                                 </form:form>
                                             </div>
 

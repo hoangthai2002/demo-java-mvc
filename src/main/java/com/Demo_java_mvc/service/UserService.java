@@ -4,18 +4,20 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.Demo_java_mvc.domain.Role;
 import com.Demo_java_mvc.domain.User;
+import com.Demo_java_mvc.repository.RoleRepository;
 import com.Demo_java_mvc.repository.UserRepository;
-
-import jakarta.persistence.Id;
 
 @Service
 
 public class UserService {
     public final UserRepository userRepository;
+    public final RoleRepository roleRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
     }
 
     public User handleSaveUser(User user) {
@@ -40,6 +42,10 @@ public class UserService {
     public void DeleteUser(long id) {
         this.userRepository.deleteById(id);
 
+    }
+
+    public Role getRoleByName(String Name) {
+        return this.roleRepository.findByName(Name);
     }
 
 }
