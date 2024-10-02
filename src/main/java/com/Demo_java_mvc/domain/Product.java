@@ -1,5 +1,6 @@
 package com.Demo_java_mvc.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +23,7 @@ public class Product {
     private String image;
     @NotNull
     @Size(min = 1, message = " Không được bỏ trống")
+    @Column(columnDefinition = "MEDIUMTEXT")
     private String detailDesc;
     @NotNull(message = "Không được bỏ trống")
     private String shortDesc;

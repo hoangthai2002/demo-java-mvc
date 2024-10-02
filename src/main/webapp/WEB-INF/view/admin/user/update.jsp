@@ -48,9 +48,24 @@
                                             <div class="col-md-6 col-12 mx-auto">
                                                 <h3>Update a user</h3>
                                                 <hr />
-
                                                 <form:form method="post" action="/admin/user/update"
                                                     modelAttribute="newUser">
+                                                    <c:set var="ErrorPassword">
+                                                        <form:errors path="password" cssClass="invalid-feedback" />
+                                                    </c:set>
+                                                    <c:set var="ErrorFullName">
+                                                        <form:errors path="fullName" cssClass="invalid-feedback" />
+                                                    </c:set>
+                                                    <c:set var="ErrorAddress">
+                                                        <form:errors path="address" cssClass="invalid-feedback" />
+                                                    </c:set>
+                                                    <c:set var="ErrorPhone">
+                                                        <form:errors path="phone" cssClass="invalid-feedback" />
+                                                    </c:set>
+
+
+
+
                                                     <div class="mb-3" style="display: none;">
                                                         <label class="form-label">ID:</label>
                                                         <form:input type="text" class="form-control" path="id" />
@@ -63,15 +78,24 @@
 
                                                     <div class="mb-3">
                                                         <label class="form-label">Phone number:</label>
-                                                        <form:input type="text" class="form-control" path="phone" />
+                                                        <form:input type="text"
+                                                            class="form-control ${not empty ErrorPhone ? 'is-invalid': ''}"
+                                                            path="phone" />
+                                                        ${ErrorPhone}
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Full Name:</label>
-                                                        <form:input type="text" class="form-control" path="fullName" />
+                                                        <form:input type="text"
+                                                            class="form-control ${not empty ErrorFullName ? 'is-invalid': ''}"
+                                                            path="fullName" />
+                                                        ${ErrorFullName}
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Address:</label>
-                                                        <form:input type="text" class="form-control" path="address" />
+                                                        <form:input type="text"
+                                                            class="form-control ${not empty ErrorAddress ? 'is-invalid': ''}"
+                                                            path="address" />
+                                                        ${ErrorAddress}
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">
                                                         <label for="avatarFile" class="form-label">Avatar:</label>

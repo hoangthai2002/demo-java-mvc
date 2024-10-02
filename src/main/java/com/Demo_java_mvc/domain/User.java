@@ -11,6 +11,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -24,12 +26,16 @@ public class User {
 
     private String email;
 
+    @NotNull(message = " Không được bỏ trống")
     private String password;
 
+    @NotNull(message = "Không được bỏ trống")
     private String fullName;
-
+    @NotNull
+    @Size(message = " Không được bỏ trống")
     private String address;
-
+    @NotNull
+    @Size(message = " Không được bỏ trống")
     private String phone;
     private String avatar;
 

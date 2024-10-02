@@ -80,9 +80,9 @@
                                                     ${ErrorPrice}
                                                 </div>
 
-                                                <div class="mb-3 col-12 col-md-12">
+                                                <div class="mb-3 col-12">
                                                     <label class="form-label"> Detail Description:</label>
-                                                    <form:input type="text"
+                                                    <form:textarea type="text"
                                                         class="form-control ${not empty ErrorDetailDesc ?'is-invalid' :''}"
                                                         path="detailDesc" />
                                                     ${ErrorDetailDesc}

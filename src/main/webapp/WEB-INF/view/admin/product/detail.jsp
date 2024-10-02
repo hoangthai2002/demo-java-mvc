@@ -50,6 +50,7 @@
                                                         <li class="list-group-item">Price: ${product.price}</li>
                                                         <li class="list-group-item">Factory: ${product.factory}</li>
                                                         <li class="list-group-item">Target: ${product.target}</li>
+                                                        <li class="list-group-item">Detail: ${product.detailDesc}</li>
                                                     </ul>
                                                 </div>
                                                 <a href="/admin/product" class="btn btn-primary">Back</a>
