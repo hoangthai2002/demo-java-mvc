@@ -50,18 +50,13 @@
                                                 <c:set var="ErrorName">
                                                     <form:errors path="name" cssClass="invalid-feedback" />
                                                 </c:set>
-                                                <c:set var="ErrorPrice">
-                                                    <form:errors path="name" cssClass="invalid-feedback" />
-                                                </c:set>
                                                 <c:set var="ErrorDetailDesc">
-                                                    <form:errors path="name" cssClass="invalid-feedback" />
+                                                    <form:errors path="detailDesc" cssClass="invalid-feedback" />
                                                 </c:set>
                                                 <c:set var="ErrorShortDesc">
-                                                    <form:errors path="name" cssClass="invalid-feedback" />
+                                                    <form:errors path="shortDesc" cssClass="invalid-feedback" />
                                                 </c:set>
-                                                <c:set var="Errorquantity">
-                                                    <form:errors path="name" cssClass="invalid-feedback" />
-                                                </c:set>
+
 
                                                 <!--  ////////////////////////////////////////////////////-->
                                                 <div class="mb-3 col-12 col-md-6">
@@ -74,10 +69,8 @@
 
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Price:</label>
-                                                    <form:input type="number"
-                                                        class="form-control ${not empty ErrorPrice ?'is-invalid' : ''}"
-                                                        path="price" />
-                                                    ${ErrorPrice}
+                                                    <form:input type="number" class="form-control " path="price" />
+
                                                 </div>
 
                                                 <div class="mb-3 col-12">
@@ -90,16 +83,14 @@
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Short Description:</label>
                                                     <form:input type="text"
-                                                        class="form-control ${not empty ErrorDetailDesc ? 'is-invalid':''}"
+                                                        class="form-control ${not empty ErrorDetailDesc ?'is-invalid' :''}"
                                                         path="shortDesc" />
-                                                    ${ErrorDetailDesc}
+                                                    ${ErrorShortDesc}
                                                 </div>
                                                 <div class="mb-3 col-12">
                                                     <label class="form-label">Quantity:</label>
-                                                    <form:input type="number"
-                                                        class="form-control ${not empty ErrorShortDesc ?'is-invalid':''}"
-                                                        path="quantity" />
-                                                    ${ErrorShortDesc}
+                                                    <form:input type="number" class="form-control " path="quantity" />
+
                                                 </div>
 
                                                 <div class="mb-3 col-12 col-md-6">

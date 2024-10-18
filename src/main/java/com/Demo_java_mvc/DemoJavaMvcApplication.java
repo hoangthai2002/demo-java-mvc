@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // @SpringBootApplication
 //exclude loại bỏ
 //include thêm vào
-@SpringBootApplication(exclude = org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class)
+//@SpringBootApplication(exclude = org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class)
+
+@SpringBootApplication
 public class DemoJavaMvcApplication {
 
 	public static void main(String[] args) {

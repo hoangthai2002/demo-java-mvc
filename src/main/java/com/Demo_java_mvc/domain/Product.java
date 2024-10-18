@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -17,7 +18,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull
-    @Size(min = 1, message = "Tên không được bỏ trống")
+    @NotEmpty(message = "Không được bỏ trống")
     private String name;
 
     private String image;
@@ -25,9 +26,9 @@ public class Product {
     @Size(min = 1, message = " Không được bỏ trống")
     @Column(columnDefinition = "MEDIUMTEXT")
     private String detailDesc;
-    @NotNull(message = "Không được bỏ trống")
+    @NotEmpty(message = "Không được bỏ trống")
     private String shortDesc;
-    @NotNull(message = "Không được bỏ trống")
+    @NotNull(message = "không được bỏ trống")
     private long quantity;
     @NotNull(message = "Không được bỏ trống")
     private double price;

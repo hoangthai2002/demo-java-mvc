@@ -2,6 +2,8 @@ package com.Demo_java_mvc.domain;
 
 import java.util.List;
 
+import com.Demo_java_mvc.service.validator.StrongPassword;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,7 +13,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -21,22 +23,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Email(message = "Email không hợp lệ", regexp = "[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+    @Email(message = "Email không được bỏ trống", regexp = "[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
             + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
 
     private String email;
 
-    @NotNull(message = " Không được bỏ trống")
+    @NotEmpty(message = "Không được bỏ trống")
     private String password;
-
-    @NotNull(message = "Không được bỏ trống")
+    @Size(min = 3, message = "Phải có tối thiểu 3 kí tự")
     private String fullName;
-    @NotNull
-    @Size(message = " Không được bỏ trống")
+
     private String address;
-    @NotNull
-    @Size(message = " Không được bỏ trống")
+
     private String phone;
+
     private String avatar;
 
     // User many-> to one ->role --> quan hệ N-1
