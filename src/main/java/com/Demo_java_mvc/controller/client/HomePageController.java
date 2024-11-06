@@ -16,8 +16,6 @@ import com.Demo_java_mvc.domain.dto.RegisterDTO;
 import com.Demo_java_mvc.service.ProductService;
 import com.Demo_java_mvc.service.UserService;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;

@@ -3,6 +3,7 @@ package com.Demo_java_mvc.controller.admin;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -37,8 +38,13 @@ public class ProductController {
     }
 
     @GetMapping("/admin/product")
-    public String getProductController(Model model) {
+    public String getProductController(Model model, @Param("keyword") String keyword) {
+
         List<Product> prs = this.productService.fetchProducts();
+        // if (keyword != null) {
+        // prs = this.productService.searchProduct(keyword);
+        // model.addAttribute("keyword1", keyword);
+        // }
         model.addAttribute("products", prs);
         return "admin/product/show";
     }

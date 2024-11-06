@@ -39,51 +39,68 @@
                                     <div class=" mt-5">
                                         <div class="row">
                                             <div class="col-12 mx-auto">
-                                                <div class="d-flex justify-content-between">
-                                                    <h3>Table Product</h3>
-                                                    <a href="/admin/product/create" class="btn btn-primary">Create a
-                                                        Product</a>
+                                                <div class="datatable-search">
+
+                                                    <div class="d-flex justify-content-between ">
+                                                        <h3>Table Product</h3>
+
+                                                        <a href="/admin/product/create" class="btn btn-primary">Create a
+                                                            Product</a>
+                                                    </div>
+
+
                                                 </div>
-
-                                                <hr />
-                                                <table class="table table-bordered table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>ID</th>
-                                                            <th>Name</th>
-                                                            <th>Price</th>
-                                                            <th>Factory</th>
-                                                            <th>Target</th>
-
-
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <c:forEach var="product" items="${products}">
-                                                            <tr>
-                                                                <th>${product.id}</th>
-                                                                <td>${product.name}</td>
-                                                                <td>${product.price}</td>
-                                                                <td>${product.factory}</td>
-                                                                <td>${product.target}</td>
-
-
-                                                                <td>
-                                                                    <a href="/admin/product/${product.id}"
-                                                                        class="btn btn-success">View</a>
-                                                                    <a href="/admin/product/update/${product.id}"
-                                                                        class="btn btn-warning  mx-2">Update</a>
-                                                                    <a href="/admin/product/delete/${product.id}"
-                                                                        class="btn btn-danger">Delete</a>
-                                                                </td>
-                                                            </tr>
-                                                        </c:forEach>
-                                                    </tbody>
-                                                </table>
                                             </div>
 
+
+
+
+
                                         </div>
+
+
+                                        <hr />
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Price</th>
+                                                    <th>Factory</th>
+                                                    <th>Target</th>
+
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <c:forEach var="product" items="${products}">
+                                                    <tr>
+                                                        <th>${product.id}</th>
+                                                        <td>${product.name}</td>
+                                                        <td>${product.price}</td>
+                                                        <td>${product.factory}</td>
+                                                        <td>${product.target}</td>
+
+
+                                                        <td>
+                                                            <a href="/admin/product/${product.id}"
+                                                                class="btn btn-success">View</a>
+                                                            <a href="/admin/product/update/${product.id}"
+                                                                class="btn btn-warning  mx-2">Update</a>
+                                                            <a href="/admin/product/delete/${product.id}"
+                                                                class="btn btn-danger">Delete</a>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
+                                            </tbody>
+
+
+                                        </table>
+
+                                    </div>
+
+                                </div>
                             </main>
                             <!-- Footer -->
                             <jsp:include page="../layout/footer.jsp" />
@@ -91,7 +108,7 @@
                     </div>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
                         crossorigin="anonymous"></script>
-                    <script src="js/scripts.js"></script>
+                    <script src="/js/scripts.js"></script>
 
                 </body>
 

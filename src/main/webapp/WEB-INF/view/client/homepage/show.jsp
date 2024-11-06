@@ -7,7 +7,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Document</title>
+                <title>Sơn Spec</title>
 
                 <!-- Google Web Fonts -->
                 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,26 +48,7 @@
 
 
                 <!-- Modal Search Start -->
-                <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content rounded-0">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Tìm Kiếm</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body d-flex align-items-center">
-                                <div class="input-group w-75 mx-auto d-flex">
-                                    <input type="search" class="form-control p-3" placeholder="keywords"
-                                        aria-describedby="search-icon-1">
-                                    <span id="search-icon-1" class="input-group-text p-3"><i
-                                            class="fa fa-search"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- Modal Search End -->
 
 
@@ -118,18 +99,27 @@
 
                                                                 <p style="font-size: 16px;">${product.factory}</p>
 
-                                                                <div class="d-flex flex-lg-wrap">
+                                                                <div class="d-flex flex-lg-wrap justify-content-center">
                                                                     <p style="font-size: 15px; text-align: center;width: 100% ;"
                                                                         class="text-dark  fw-bold mb-3">
                                                                         <fmt:formatNumber type="number"
                                                                             value="${product.price}" />đ
                                                                     </p>
-                                                                    <a href="#"
-                                                                        class="mx-auto btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                            class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                        Add to cart</a>
 
+                                                                    <form method="post"
+                                                                        action="/add-product-to-cart/${product.id}">
+                                                                        <input type="hidden"
+                                                                            name="${_csrf.parameterName}"
+                                                                            value="${_csrf.token}" />
+                                                                        <button class="mx-auto btn border border-secondary
+                                                                        rounded-pill px-3 text-primary"><i
+                                                                                class="fa fa-shopping-bag me-2 text-primary"></i>
+                                                                            Add to cart
+                                                                        </button>
+                                                                    </form>
                                                                 </div>
+
+
 
                                                             </div>
                                                         </div>
@@ -151,27 +141,7 @@
 
 
 
-                <!-- Copyright Start -->
-                <div class="container-fluid copyright bg-dark py-4">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                                <span class="text-light"><a href="#"><i
-                                            class="fas fa-copyright text-light me-2"></i>Your
-                                        Site Name</a>, All right reserved.</span>
-                            </div>
-                            <div class="col-md-6 my-auto text-center text-md-end text-white">
-                                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                                Distributed
-                                By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Copyright End -->
+
                 <jsp:include page="../layout/footer.jsp" />
 
 
