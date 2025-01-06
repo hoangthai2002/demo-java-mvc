@@ -42,16 +42,16 @@
                     <div id="layoutSidenav_content">
                         <main>
                             <div class="container-fluid px-4">
-                                <h1 class="mt-4">Update Product</h1>
+                                <h1 class="mt-4">Cập nhật Sản Phẩm</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                                    <li class="breadcrumb-item"><a href="/admin/product">Product</a></li>
-                                    <li class="breadcrumb-item active">Update Product</li>
+                                    <li class="breadcrumb-item"><a href="/admin/product">Sản Phẩm</a></li>
+                                    <li class="breadcrumb-item active">Cập nhật Sản Phẩm</li>
                                 </ol>
                                 <div class="mt-5">
                                     <div class="row">
                                         <div class="col-md-6 col-12 mx-auto">
-                                            <h3>Update a Product</h3>
+                                            <h3>Cập nhật Sản Phẩm</h3>
                                             <hr />
                                             <form:form method="post" action="/admin/product/update"
                                                 modelAttribute="newProduct" class="row" enctype="multipart/form-data">
@@ -77,7 +77,7 @@
                                                     <form:input type="text" class="form-control" path="id" />
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label class="form-label">Name:</label>
+                                                    <label class="form-label">Tên Sản Phẩm:</label>
                                                     <form:input type="text"
                                                         class="form-control ${not empty ErrorName ? 'is-invalid' : ''}"
                                                         path="name" />
@@ -85,7 +85,7 @@
                                                 </div>
 
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label class="form-label">Price:</label>
+                                                    <label class="form-label">Giá:</label>
                                                     <form:input type="number"
                                                         class="form-control ${not empty ErrorPrice ?'is-invalid' : ''}"
                                                         path="price" />
@@ -93,21 +93,27 @@
                                                 </div>
 
                                                 <div class="mb-3 col-12 col-md-12">
-                                                    <label class="form-label"> Detail Description:</label>
+                                                    <label class="form-label">Mô Tả chi tiết:</label>
                                                     <form:input type="text"
                                                         class="form-control ${not empty ErrorDetailDesc ?'is-invalid' :''}"
                                                         path="detailDesc" />
                                                     ${ErrorDetailDesc}
                                                 </div>
-                                                <div class="mb-3 col-12 col-md-6">
+
+                                                <!--
+
+                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Short Description:</label>
                                                     <form:input type="text"
                                                         class="form-control ${not empty ErrorDetailDesc ? 'is-invalid':''}"
                                                         path="shortDesc" />
                                                     ${ErrorDetailDesc}
-                                                </div>
+                                                </div>s
+                                                
+                                                -->
+
                                                 <div class="mb-3 col-12">
-                                                    <label class="form-label">Quantity:</label>
+                                                    <label class="form-label">Số lượng:</label>
                                                     <form:input type="number"
                                                         class="form-control ${not empty ErrorQuantity ?'is-invalid':''}"
                                                         path="quantity" />
@@ -115,24 +121,29 @@
                                                 </div>
 
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label class="form-label">Factory:</label>
+                                                    <label class="form-label">Dòng Sản Phẩm</label>
                                                     <form:select class="form-select" path="factory">
-                                                        <form:option value="Sơn CEO">CEO </form:option>
-                                                        <form:option value="Sơn EKO">EKO</form:option>
-                                                        <form:option value="Sơn GO GREEN">GO GREEN</form:option>
-                                                        <form:option value="Sơn HELLO">HELLO</form:option>
-                                                        <form:option value="Sơn TAKET">TAKET</form:option>
+                                                        <form:option value="Spec Hello">Spec Hello </form:option>
+                                                        <form:option value="Spec Ceo">Spec Ceo </form:option>
+                                                        <form:option value="Spec Go Green">Spec Go Green </form:option>
+                                                        <form:option value="Spec Walli">Spec Walli </form:option>
+                                                        <form:option value="Suporseal">Suporseal </form:option>
+
+
                                                     </form:select>
                                                 </div>
+
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label class="form-label">Target:</label>
+                                                    <label class="form-label">Loại Sản Phẩm</label>
                                                     <form:select class="form-select" path="target">
-                                                        <form:option value="Sơn Chống Thấm">Sơn Chống Thấm
+                                                        <form:option value="Bột Bả">Bột Trét
                                                         </form:option>
                                                         <form:option value="Sơn Lót">Sơn Lót</form:option>
+                                                        <form:option value="Sơn Chống Thấm">Sơn Chống Thấm</form:option>
                                                         <form:option value="Sơn Ngoại Thất">Sơn Ngoại Thất
                                                         </form:option>
-                                                        <form:option value="Sơn Nội Thất">Nội Thất</form:option>
+                                                        <form:option value="Sơn Nội Thất">Sơn Nội Thất
+                                                        </form:option>
 
                                                     </form:select>
                                                 </div>

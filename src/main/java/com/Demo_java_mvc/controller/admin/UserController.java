@@ -1,7 +1,11 @@
 package com.Demo_java_mvc.controller.admin;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,21 +43,36 @@ public class UserController {
         this.uploadService = uploadService;
     }
 
-    @RequestMapping("/")
-    public String getHomePage(Model model) {
-        List<User> arrayUser = this.userService.getAllUserByEmail("2@gmail.com");
+    // @RequestMapping("/")
+    // public String getHomePage(Model model) {
+    // List<User> arrayUser = this.userService.getAllUserByEmail("2@gmail.com");
 
-        System.out.println(arrayUser);
+    // System.out.println(arrayUser);
 
-        model.addAttribute("thai", "test");
-        model.addAttribute("hoang", "hello from controler");
-        return "hello";
-    }
+    // model.addAttribute("thai", "test");
+    // model.addAttribute("hoang", "hello from controler");
+    // return "hello";
+    // }
 
     @RequestMapping("/admin/user")
-    public String getUserPage(Model model) {
-        List<User> users = this.userService.getAllUser();
-        model.addAttribute("user1", users);
+    public String getUserPage(Model model, @RequestParam("page") Optional<String> pageOption) {
+        int page = 1;
+        try {
+            if (pageOption.isPresent()) {
+                page = Integer.parseInt(pageOption.get());
+            } else {
+
+            }
+        } catch (Exception e) {
+
+        }
+        Pageable pageable = PageRequest.of(page - 1, 2);
+        Page<User> users = this.userService.getAllUser(pageable);
+        List<User> listUser = users.getContent();
+
+        model.addAttribute("user1", listUser);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", users.getTotalPages());
         return "admin/user/show";
     }
 

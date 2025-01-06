@@ -3,7 +3,9 @@ package com.Demo_java_mvc.controller.admin;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.data.repository.query.Param;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -38,15 +40,27 @@ public class ProductController {
     }
 
     @GetMapping("/admin/product")
-    public String getProductController(Model model, @Param("keyword") String keyword) {
+    public String getProductController(Model model,
+            @RequestParam("page") Optional<String> pageOptional) {
+        int page = 1;
+        try {
+            if (pageOptional.isPresent()) {
+                // convert from String to int
+                page = Integer.parseInt(pageOptional.get());
+            } else {
+                // page=1
+            }
+        } catch (Exception e) {
 
-        List<Product> prs = this.productService.fetchProducts();
-        // if (keyword != null) {
-        // prs = this.productService.searchProduct(keyword);
-        // model.addAttribute("keyword1", keyword);
-        // }
-        model.addAttribute("products", prs);
+        }
+        Pageable pageable = PageRequest.of(page - 1, 5);
+        Page<Product> prs = this.productService.fetchProducts(pageable);
+        List<Product> listProducts = prs.getContent();
+        model.addAttribute("products", listProducts);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", prs.getTotalPages());
         return "admin/product/show";
+
     }
 
     @GetMapping("/admin/product/create")

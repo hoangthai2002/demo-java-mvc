@@ -127,9 +127,21 @@
         $('#videoModal').on('hide.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc);
         })
+
+        //add active class to header
+        const navElement = $("#navbarCollapse");
+        const currentUrl = window.location.pathname;
+        navElement.find('a.nav-link').each(function () {
+            const link = $(this); // Get the current link in the loop
+            const href = link.attr('href'); // Get the href attribute of the link
+
+            if (href === currentUrl) {
+                link.addClass('active'); // Add 'active' class if the href matches the current URL
+            } else {
+                link.removeClass('active'); // Remove 'active' class if the href does not match
+            }
+        });
     });
-
-
 
     // Product Quantity
     // $('.quantity button').on('click', function () {
@@ -146,7 +158,6 @@
     //     }
     //     button.parent().parent().find('input').val(newVal);
     // });
-
     $('.quantity button').on('click', function () {
         let change = 0;
 
@@ -166,8 +177,14 @@
         const input = button.parent().parent().find('input');
         input.val(newVal);
 
-        //get price
+        //set form index
+        const index = input.attr("data-cart-detail-index")
+        const el = document.getElementById(`cartDetails${index}.quantity`);
+        $(el).val(newVal);
 
+
+
+        //get price
         const price = input.attr("data-cart-detail-price");
         const id = input.attr("data-cart-detail-id");
 
@@ -216,6 +233,7 @@
         formatted = formatted.replace(/\./g, ',');
         return formatted;
     }
+
 
 })(jQuery);
 

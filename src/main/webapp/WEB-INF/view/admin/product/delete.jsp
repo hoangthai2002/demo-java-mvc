@@ -24,18 +24,18 @@
                     <div id="layoutSidenav_content">
                         <main>
                             <div class="container-fluid px-4">
-                                <h1 class="mt-4">Delete Product</h1>
+                                <h1 class="mt-4">Xóa Sản Phẩm</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item "><a href="/admin"> Dashboard</a></li>
                                     <li class="breadcrumb-item "><a href="/admin/product"> Product</a></li>
-                                    <li class="breadcrumb-item active">Delete Product</li>
+                                    <li class="breadcrumb-item active">Xóa Sản Phẩm</li>
                                 </ol>
 
                                 <body>
                                     <div class=" mt-5">
                                         <div class="row">
                                             <div class=" col-12 mx-auto">
-                                                <h3>Delete the Product ${id}</h3>
+                                                <h3>Xóa Sản Phẩm ${id}</h3>
                                                 <hr />
                                                 <div class="alert alert-danger" role="alert">
                                                     Bạn có muốn xóa Product ${id}
@@ -47,7 +47,7 @@
                                                         <form:input value="${id}" type="text" class="form-control"
                                                             path="id" />
                                                     </div>
-                                                    <button class="btn btn-danger">Delete</button>
+                                                    <button class="btn btn-danger">Xóa</button>
                                                 </form:form>
                                             </div>
 

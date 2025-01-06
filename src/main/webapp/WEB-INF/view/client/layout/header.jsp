@@ -29,8 +29,9 @@
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
                             <a href="/" class="nav-item nav-link active">Trang chủ</a>
+                            <a href="/products" class="nav-item nav-link active">Sản Phẩm</a>
 
-                            <a href="client/product/detail" class="nav-item nav-link">Sản Phẩm</a>
+
                             <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu m-0 bg-secondary rounded-0">
@@ -71,7 +72,7 @@
 
                                     <li><a class="dropdown-item" href="#">Quản lý tài khoản</a></li>
 
-                                    <li><a class="dropdown-item" href="#">Lịch sử mua hàng</a></li>
+                                    <li><a class="dropdown-item" href="/order-history">Lịch sử mua hàng</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>

@@ -11,15 +11,15 @@
                         </a>
                         <a class="nav-link" href="/admin/user">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            User
+                            Người dùng
                         </a>
                         <a class="nav-link" href="/admin/product">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Product
+                            Sản phẩm
                         </a>
                         <a class="nav-link" href="/admin/order">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Order
+                            Đặt hàng
                         </a>
 
                     </div>

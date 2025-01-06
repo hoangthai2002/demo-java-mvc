@@ -64,8 +64,7 @@
                                 <div class="col-lg-8 text-end">
                                     <ul class="nav nav-pills d-inline-flex text-center mb-5">
                                         <li class="nav-item">
-                                            <a class="d-flex m-2 py-2 bg-light rounded-pill active"
-                                                data-bs-toggle="pill" href="#tab-1">
+                                            <a class="d-flex m-2 py-2 bg-light rounded-pill active" href="/products">
                                                 <span class="text-dark" style="width: 130px;">Tất Cả Sản Phẩm</span>
                                             </a>
                                         </li>
@@ -85,8 +84,10 @@
                                                                 <img src="/images/product/${product.image}"
                                                                     class="img-fluid w-50 rounded-top" alt="">
                                                             </div>
+                                                            <!--
+                                                            -->
                                                             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                                style="top: 10px; left: 10px;">${product.target}</div>
+                                                                style="top: 10px; left: 10px;"></div>
                                                             <div
                                                                 class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                                 <h4 style="font-size: 20px;">
@@ -97,9 +98,10 @@
 
                                                                 </h4>
 
-                                                                <p style="font-size: 16px;">${product.factory}</p>
+                                                                <p style="font-size: 16px;">${product.target}</p>
 
-                                                                <div class="d-flex flex-lg-wrap justify-content-center">
+                                                                <div
+                                                                    class="d-flex flex-lg-wrap justify-content-center flex-clumn">
                                                                     <p style="font-size: 15px; text-align: center;width: 100% ;"
                                                                         class="text-dark  fw-bold mb-3">
                                                                         <fmt:formatNumber type="number"
@@ -114,7 +116,7 @@
                                                                         <button class="mx-auto btn border border-secondary
                                                                         rounded-pill px-3 text-primary"><i
                                                                                 class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                            Add to cart
+                                                                            Thêm vào giỏ hàng
                                                                         </button>
                                                                     </form>
                                                                 </div>
